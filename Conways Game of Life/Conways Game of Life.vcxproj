@@ -139,7 +139,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="functions.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="menu.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="dataType.h" />
+    <ClInclude Include="functions.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Conways Game of Life.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
