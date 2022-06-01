@@ -4,6 +4,8 @@
 #define FUNCTIONS_H
 
 int menu();
+int gameMenu();
+int library();
 void rules();
 
 

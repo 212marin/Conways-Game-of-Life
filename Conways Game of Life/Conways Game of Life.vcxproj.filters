@@ -24,6 +24,12 @@
     <ClCompile Include="menu.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="library.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gameMenu.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dataType.h">

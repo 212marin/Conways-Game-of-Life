@@ -20,15 +20,15 @@ int menu() {
 
 	switch (condition) {
 	case '1':	
-
-		break;
+		system("cls");
+		return 5;
 	case '2':
 		system("cls");
 		rules();
 		break; 
 	case '3':
-
-		break;
+		system("cls");
+		return 3;
 	case '4':
 		condition = 0;
 		system("cls");
