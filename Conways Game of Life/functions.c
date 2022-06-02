@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS
+﻿#define _CRT_SECURE_NO_WARNINGS
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -19,4 +19,61 @@ void rules() {
 
 	int value1 = _getch();
 	system("cls");
+}
+
+CELL** gridSetup(int t1, int t2){
+	CELL** grid = (CELL**)calloc(t1, sizeof(CELL*));
+	if (grid == NULL) {
+		system("cls");
+		perror("Creating grid error: ");
+		exit(EXIT_FAILURE);
+	}
+	int i = 0, j = 0;
+	for (i = 0; i < t1; i++) {
+		*(grid + i) = (CELL*)calloc(t2, sizeof(CELL));
+		if (*(grid + i) == NULL) {
+			system("cls");
+			perror("Creating grid error: ");
+			exit(EXIT_FAILURE);
+		}
+	}
+
+	return grid;
+}
+
+void gridRandomize(CELL** grid, int t1, int t2) {
+	int i = 0, j = 0, temp = 0;
+
+	for (i = 0; i < t1; i++) {
+		for (j = 0; j < t2; j++) {
+			temp = rand() % 2;
+			if (temp == 0)
+				(*(*(grid + i) + j)).state = 0;
+			else
+				(*(*(grid + i) + j)).state = 1;
+		}
+	}
+}
+
+void gridOutput(CELL** grid, int t1, int t2) {
+	int i = 0, j = 0, temp = 0;
+	for (i = 0; i < t1; i++) {
+		for (j = 0; j < t2; j++) {
+			temp = (*(*(grid + i) + j)).state;
+			if (temp == 0)
+				printf("-");
+			else
+				printf("*");
+		}
+		printf("\n");
+	}
+}
+
+CELL** gridDelete(CELL** grid, int t1) {
+	int i = 0;
+	for (i = 0; i < t1; i++) {
+		free(*(grid + i));
+	}
+	free(grid);
+	return NULL;
 }

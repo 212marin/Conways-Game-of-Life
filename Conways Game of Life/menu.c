@@ -13,7 +13,7 @@ int menu() {
 	printf("\t\t\tOption 2: Read the rules\n");
 	printf("\t\t\tOption 3: Browse the library\n");
 	printf("\t\t\tOption 4: Close the program\n");
-	printf("======================================================\n");
+	printf("======================================================================\n");
 
 	int condition = 0;
 	condition = _getch();
